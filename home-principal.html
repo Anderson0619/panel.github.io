@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Panel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Panel de Aplicaciones Fishcorpsa</h1>
+            <p>Selecciona la aplicación a la que deseas acceder</p>
+        </div>
+
+        <div class="apps-grid">
+            <!-- Aplicación 1 -->
+            <a href="http://produc.fishcorpsa.com.ec:4000/" 
+               class="app-card" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <div class="app-icon">
+                    📊
+                </div>
+                <h2 class="app-title">App Producción</h2>
+                <div class="app-url">
+                    http://produc.fishcorpsa.com.ec:4000/
+                </div>
+                <p class="app-description">
+                    Sistema de producción principal - Control y monitoreo de procesos productivos
+                </p>
+                <span class="btn-open">Abrir Aplicación →</span>
+            </a>
+
+            <!-- Aplicación 2 - Reemplaza con tu segunda URL -->
+            <a href="http://localhost:3001/login" 
+               class="app-card" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                <div class="app-icon">
+                    📈
+                </div>
+                <h2 class="app-title">App Gestión de Barcos98</h2>
+                <div class="app-url">
+                    http://localhost:3001/login
+                </div>
+                <p class="app-description">
+                    Sistema de gestión empresarial - Administración y control de recursos
+                </p>
+                <span class="btn-open">Abrir Aplicación →</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Panel de acceso rápido - Fishcorpsa © <span id="current-year"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Script opcional para manejar apertura en nueva pestaña
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.getAttribute('href');
+                window.open(url, '_blank', 'noopener,noreferrer');
+            });
+        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
